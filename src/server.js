@@ -13,9 +13,12 @@ app.use(morgan('dev'));
 //forms
 app.use(express.urlencoded({extended:false}));
 
+
+
+
 //Routes
 
-
+app.use('/home', require('./routes/home'));
 
 //Static files
 app.use(express.static(path.join(__dirname,'/public')));
