@@ -1,0 +1,87 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section .caja_formulario
+{
+    position: relative;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:400px;
+    height: 480px;
+}
+
+section .caja_formulario .contenido_formulario
+{
+position: relative;
+    width: 100%;
+}
+
+
+section .caja_formulario .contenido_formulario h2{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+
+section .caja_formulario 
+.contenido_formulario 
+.cajaInput
+{
+padding:15px;
+margin-bottom: 10px;
+}
+
+section .caja_formulario 
+.contenido_formulario 
+.cajaInput p{
+    font-size: 12px;
+    padding:5px;
+    font-weight: 600;
+    
+}
+
+
+
+section .caja_formulario 
+.contenido_formulario 
+.cajaInput textarea
+{
+    margin-top:10px;
+    border-radius:15px;
+
+}
+
+section .caja_formulario 
+.contenido_formulario 
+button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width:100%;
+    padding:10px;
+    border-radius:15px;
+}
+
+section .caja_formulario 
+.contenido_formulario 
+button span
+{
+    margin-left: 10px;
+    font-size:1.5rem;
+}
