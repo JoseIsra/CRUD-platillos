@@ -3,6 +3,8 @@ const morgan = require('morgan');
 const path = require('path');
 const app = express();
 
+
+require('./database/dbconfig');
 //Ejs template
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'views'));
@@ -18,7 +20,9 @@ app.use(express.urlencoded({extended:false}));
 
 //Routes
 
-app.use('/home', require('./routes/home'));
+app.use('/login', require('./routes/login'));
+app.use('/lista', require('./routes/lista'));
+app.use('/platos', require('./routes/platos'));
 
 //Static files
 app.use(express.static(path.join(__dirname,'/public')));
