@@ -2,8 +2,8 @@
 
 module.exports = (sequelize , type) => {
     return sequelize.define('plate', {
-        platillo:{
-            type:type.TEXT,
+        nombre:{
+            type:type.STRING,
             allowNull:false
         },  
         ingredientes:{

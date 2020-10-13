@@ -6,8 +6,7 @@ router.route('/')
     res.render('login');
 })
 .post(async(req, res) => {
-    const {platillo, ingredientes, descripcion} = req.body;
-    await Plato.create(req.body);
+await Plato.create(req.body);
     console.log("datos agregados correctamente");
     res.redirect('/login');
 });
