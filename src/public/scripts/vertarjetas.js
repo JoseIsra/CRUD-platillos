@@ -15,10 +15,10 @@ function esconderElementos(){
 
 botonInicio.addEventListener('click', async()=>{
 
-        const respuesta = await fetch("/cartas/platos");
+        const respuesta = await fetch("/tarjeta/platos");
         const platos = await respuesta.json();
         
-        platos.forEach((plato,indice) => {
+        platos.forEach((plato) => {
              //div para las tarjetas de cada plato
             let platoContenido = document.createElement('div');
             platoContenido.classList.add('carta');

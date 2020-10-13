@@ -18,4 +18,30 @@ const infoDePLato = await Plato.findAll({
     res.end();  
 });
 
+router.post('/edit/:id', async(req, res)=>{
+    await Plato.update({
+            nombre:req.body.nombre,
+            ingredientes:req.body.ingredientes,
+            descripcion: req.body.descripcion
+    },{
+        where:{
+            id:req.params.id
+        }
+    });
+    console.log("CAMBIOS REALIZADOS!!!! ");
+    res.redirect('/login');
+});
+
+
+router.get('/delete/:id', async (req, res)=>{
+await Plato.destroy({
+    where:{
+        id: req.params.id
+    }
+});
+    
+    res.redirect('/login');
+});
+
+
 module.exports = router;

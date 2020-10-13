@@ -1,5 +1,4 @@
 const {Plato} = require('../database/dbconfig');
-const plato = require('../models/plato');
 const router = require('express').Router();
 
 router.get('/',(req, res)=>{

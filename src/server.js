@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended:false}));
 //Routes
 
 app.use('/login', require('./routes/login'));
-app.use('/cartas', require('./routes/cartas'));
+app.use('/tarjeta', require('./routes/tarjeta'));
 app.use('/platos', require('./routes/platos'));
 
 //Static files
