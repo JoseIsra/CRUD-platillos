@@ -1,7 +1,7 @@
 
 const form = document.querySelector('form');
 const tarjeta = document.querySelector('.tarjeta');
-
+const saludo = document.querySelector('#saludo');
 
 
 form.addEventListener('submit', async(e)=>{
@@ -10,7 +10,14 @@ const formData = new FormData(form);
 const platoNombre = formData.get('nombre');
 const respuesta = await fetch(`/platos/ver?nombre=${platoNombre}`);
 const platillo = await respuesta.json();
-mostrar(platillo[0]);
+
+if(!platillo.length){
+    saludo.textContent = "NO HAY ESE PLATO";
+}else{
+    saludo.style.display = "none";
+    tarjeta.style.display = 'block';
+    mostrar(platillo[0]);
+}
 });
 
 function mostrar(platillo){
@@ -25,12 +32,12 @@ function mostrar(platillo){
     formulario.method = "POST";
     let btnForm = document.createElement('button');
     btnForm.type = "submit";
-    btnForm.textContent ="EDITAR";
+    btnForm.textContent ="Guardar cambios";
     //nombre del plato
     let cajaNombre = document.createElement('div');
     cajaNombre.classList.add('camposPlato');
     let labelPlato = document.createElement('label');
-    labelPlato.textContent = "El plato es"
+    labelPlato.textContent = "Plato"
     let nombreDePlato = document.createElement('input');
     nombreDePlato.name="nombre"
     nombreDePlato.value = `${platillo.nombre}`;
@@ -43,7 +50,7 @@ function mostrar(platillo){
     labelIngred.textContent = "INGREDIENTES";
     let ingredientes = document.createElement('textarea');
     ingredientes.setAttribute('rows',4);
-    ingredientes.setAttribute('cols',20);
+    ingredientes.setAttribute('cols',30);
     ingredientes.name = "ingredientes";
     ingredientes.value = `${platillo.ingredientes}`;
 
@@ -57,7 +64,7 @@ cajaDescripcion.classList.add('camposPlato');
     labelDescripcion.textContent = "DESCRIPCIÓN";
     let descripcion = document.createElement('textarea');
     descripcion.setAttribute('rows',4);
-    descripcion.setAttribute('cols',20);
+    descripcion.setAttribute('cols',30);
     descripcion.name="descripcion";
     descripcion.value = `${platillo.descripcion}`;
 
@@ -67,16 +74,16 @@ cajaDescripcion.classList.add('camposPlato');
         //enlace 
     let enlaceBorrarPlato = document.createElement('a');
     enlaceBorrarPlato.href =  `/platos/delete/${platillo.id}`;
-    enlaceBorrarPlato.text = "BORRAR";
+    enlaceBorrarPlato.text = "Borrar";
 
 formulario.appendChild(cajaNombre);
 formulario.appendChild(cajaIngredientes);
 formulario.appendChild(cajaDescripcion);
 formulario.appendChild(btnForm);
+formulario.appendChild(enlaceBorrarPlato);
 
 tarjeta.appendChild(titulo);
 tarjeta.appendChild(formulario);
-tarjeta.appendChild(enlaceBorrarPlato);
 
 }
 

@@ -5,3 +5,180 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+section{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction:row
+}
+
+section a:first-child
+{
+    position:absolute;
+    top:30px;
+    left:30px;
+    padding:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    display:block;
+    width:400px;
+}
+
+section a:first-child span
+{
+    font-size:2rem;
+    animation:mover .7s linear infinite;
+    position: absolute;
+    top:-5px;
+}
+@keyframes mover
+{
+    0%{
+        transform: translateX(5px);
+    }
+    100%{
+        transform: translateX(20px);
+
+    }
+}
+
+
+section .buscar_plato
+{
+    padding:10px;
+    position:relative;
+}
+
+section .buscar_plato form
+{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+section .buscar_plato form input
+{
+    padding:30px 10px;
+    padding-right:65px;
+    font-size:20px;
+    font-weight: 900;
+}
+
+section .buscar_plato form button 
+{
+    font-size:2.5rem;
+    position:absolute;
+    right:30px;
+    cursor:pointer;
+}
+
+
+section .resultado_busqueda
+{
+    position: relative;
+    width: 550px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+    border:1px solid black;
+    border-radius:20px;
+}
+
+section .resultado_busqueda h1
+{
+    text-align: center;
+    font-size: 25px;
+}
+
+
+section .resultado_busqueda .tarjeta
+{
+    display:none;
+    position:relative;
+    width:100%;
+    top:30px;
+} 
+
+section .resultado_busqueda .tarjeta h2
+{
+    text-align: center;
+    font-size: 30px;
+    word-break: break-word;
+    font-weight: 900;
+    margin-bottom:40px;
+    position:absolute;
+    top:-90px;
+}
+
+section .resultado_busqueda .tarjeta form
+{
+    height:340px;
+}
+
+section .resultado_busqueda .tarjeta .camposPlato
+{
+    margin-bottom:25px;
+    padding:10px;
+}
+
+section .resultado_busqueda .tarjeta
+.camposPlato:nth-child(1)
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section .resultado_busqueda .tarjeta
+.camposPlato input
+{
+padding:10px;
+}
+
+section .resultado_busqueda .tarjeta
+.camposPlato p
+{
+    display:inline;
+    padding:5px;
+}
+
+section .resultado_busqueda .tarjeta
+.camposPlato textarea
+{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+section .resultado_busqueda .tarjeta
+button
+{
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 15px;
+    position: absolute;
+    left: 15px;
+    bottom:-40px;
+}
+
+section .resultado_busqueda .tarjeta
+a 
+{
+position:absolute;
+padding:10px;
+right:15px;
+border:1px solid black;
+border-radius:20px;
+bottom:-45px;
+right:50px;
+text-decoration:none;
+outline:none;
+}
+
+
