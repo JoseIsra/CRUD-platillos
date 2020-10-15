@@ -12,6 +12,7 @@ section{
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
+    background-image: url('../imagenes/city.png');
 }
 
 section .caja_formulario
@@ -24,7 +25,33 @@ section .caja_formulario
     width:400px;
     height: 480px;
     border:1px solid black;
+    
+    background-color: rgba(0,0,0,.3);
+    border-radius: 30px;
+    box-shadow:0 0 15px rgba(0,0,0,.6),
+    0 0 20px rgba(0,0,0,1),
+    0 0 25px rgba(0,0,0,1);
 }
+
+
+section .caja_formulario::after
+{
+    content:'';
+    position:absolute;
+    pointer-events: none;
+    top:5px;
+    bottom:5px;
+    left:10px;
+    right:10px;
+    border-radius:25px;
+    background: linear-gradient(to bottom, rgba(255,255,255,.3) 0%,
+    rgba(255,255,255,.1) 15%, transparent 50%, transparent 85%,
+    rgba(255,255,255,.3) 100%);
+    
+
+}
+
+
 
 section .caja_formulario .contenido_formulario
 {
@@ -38,6 +65,7 @@ section .caja_formulario .contenido_formulario h2{
     text-align: center;
     margin-bottom: 40px;
     letter-spacing: 3px;
+    color:white;
 }
 
 section .caja_formulario 
@@ -53,15 +81,31 @@ section .caja_formulario
 .contenido_formulario 
 .cajaInput input
 {
-    padding:  20px;
+    padding:  25px;
     font-size:14px;
     padding-left:50px;
     width: 100%;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,.6);
+    background: transparent;
+    box-shadow: inset 5px 5px 5px rgba(255,255,255,.1),
+    inset -5px -5px 5px rgba(255,255,255,.1);
+    color:white;
+    font-weight: 900;
+    outline: none;
 }
 
 section .caja_formulario 
 .contenido_formulario 
-.cajaInput img
+.cajaInput input:focus
+{
+box-shadow:0 0 5px white,
+0 0 5px white;
+}
+
+section .caja_formulario 
+.contenido_formulario 
+.cajaInput svg
 {
 position: absolute;
 width:40px;
@@ -79,7 +123,7 @@ section .caja_formulario
     font-size: 12px;
     padding:5px;
     font-weight: 600;
-    
+    color:white;
 }
 
 
@@ -91,7 +135,23 @@ section .caja_formulario
     margin-top:10px;
     border-radius:15px;
     padding:5px;
+    color:white;
+    background-color:transparent;
+    box-shadow: inset 5px 5px 5px rgba(255,255,255,.1),
+    inset -5px -5px 5px rgba(255,255,255,.1);
+    outline:none;
 }
+
+section .caja_formulario 
+.contenido_formulario 
+.cajaInput textarea:focus
+{
+    box-shadow: inset 2px 2px 2px rgba(255,255,255,1),
+    inset -2px -2px 2px rgba(255,255,255,1),
+    2px 2px 2px rgba(255,255,255,.4),
+    -2px -2px 2px rgba(255,255,255,.4);
+}
+
 
 
 section .caja_formulario 
@@ -102,10 +162,29 @@ button
     justify-content: center;
     align-items: center;
     position: relative;
+    color:white;
     width:100%;
     padding:10px;
+    border:1px solid white;
     border-radius:15px;
+    background-color:transparent;
+    outline: none;
+    cursor:pointer;
+    opacity: .4;
+    transition:0.3s;
 }
+
+section .caja_formulario 
+.contenido_formulario 
+button:hover{
+    opacity:1;
+    background-color:rgba(0,0,0,.6);
+    box-shadow:inset 5px 5px 5px #5a189a,
+    inset -5px -5px 5px #5a189a,
+    5px 5px 5px #5a189a,
+    5px 5px 5px #5a189a;
+}
+
 
 section .caja_formulario 
 .contenido_formulario 
@@ -113,6 +192,7 @@ button span
 {
     margin-left: 10px;
     font-size:1.5rem;
+    color:white;
 }
 
 
@@ -163,6 +243,10 @@ section .btn-modal button
     transform:rotate(-90deg);
     position: relative;
     left:30px;
+    background-color: transparent;
+    color:white;
+    border:1px solid white;
+    outline:none;
 }
 
 section .btn-modal button::before
@@ -176,7 +260,14 @@ section .btn-modal button::before
     height: 45px;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
+    border:1px solid white;
 }
+
+section .btn-modal button:hover
+{
+    background-color: rgb(0,0,0);
+}
+
 
 
 .cajaModal{
@@ -193,19 +284,37 @@ section .btn-modal button::before
 .cajaModal span
 {
     font-size:3em;
-    color:rgba(255,255,255, .4);
+    color:white;
     position: absolute;
     right:50px;
     top:100px;
     cursor:pointer;
 }
 
+.cajaModal span:hover
+{
+    opacity:.4;
+}
+
+
 .cajaModal a
 {
     text-decoration: none;
+    display:inline-block;
     padding:30px;
     position:relative;
+    border:2px solid white;
+    border-radius:15px;
+    color:white;
+    outline:none;
 }
+
+.cajaModal a:hover
+{
+    transform:scale(1.2);
+}
+
+
 
 .cajaModal a:nth-of-type(1)
 {

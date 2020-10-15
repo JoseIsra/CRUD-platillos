@@ -10,7 +10,8 @@ section{
     justify-content: space-around;
     align-items: center;
     min-height: 100vh;
-    flex-direction:row
+    flex-direction:row;
+    background-image:url('../imagenes/theforest.png');
 }
 
 section a:first-child
@@ -24,23 +25,32 @@ section a:first-child
     align-items: center;
     display:block;
     width:400px;
+    color:white;
+    border:1px solid white;
+    border-radius:20px;
+    outline:none;
+    text-decoration:none;
 }
+section a:first-child:hover
+{
+    transform:scale(1.1);
+}
+
 
 section a:first-child span
 {
     font-size:2rem;
     animation:mover .7s linear infinite;
-    position: absolute;
+    position: relative;
     top:-5px;
 }
 @keyframes mover
 {
     0%{
-        transform: translateX(5px);
+        right:0;
     }
     100%{
-        transform: translateX(20px);
-
+    left:20px
     }
 }
 
@@ -64,15 +74,34 @@ section .buscar_plato form input
     padding-right:65px;
     font-size:20px;
     font-weight: 900;
+    background-color:transparent;
+    color:white;
+    border:none;
+    border-bottom:2px solid white;
+    outline:none;
 }
+
+
 
 section .buscar_plato form button 
 {
     font-size:2.5rem;
     position:absolute;
     right:30px;
+    background-color: transparent;
+    outline:none;
+    color:white;
+    border:none;
+    opacity:0.4;
     cursor:pointer;
+    transition:0.2s ease-in;
 }
+
+section .buscar_plato form button:hover
+{
+    opacity:0.8;
+}
+
 
 
 section .resultado_busqueda
@@ -84,14 +113,18 @@ section .resultado_busqueda
     justify-content: center;
     align-items: center;
     padding:30px;
-    border:1px solid black;
+    border:1px solid rgba(255,255,255,.4);
     border-radius:20px;
+    box-shadow:5px 10px 20px rgba(255,255,255,.3),
+    -5px -10px 20px rgba(255,255,255,.3);
 }
 
 section .resultado_busqueda h1
 {
     text-align: center;
     font-size: 25px;
+    color:rgba(255,255,255,.8);
+    text-shadow: 4px 5px 7px #008E09;
 }
 
 
@@ -112,6 +145,9 @@ section .resultado_busqueda .tarjeta h2
     margin-bottom:40px;
     position:absolute;
     top:-90px;
+    color:#edf2f4;
+    text-shadow: 5px 8px 10px #480ca8,
+    5px 8px 20px #480ca8;
 }
 
 section .resultado_busqueda .tarjeta form
@@ -134,9 +170,22 @@ section .resultado_busqueda .tarjeta
 }
 
 section .resultado_busqueda .tarjeta
+.camposPlato label
+{
+color:rgba(255,255,255,.8);
+}
+
+
+section .resultado_busqueda .tarjeta
 .camposPlato input
 {
 padding:10px;
+color:white;
+background-color: transparent;
+outline:none;
+border:1px solid white;
+box-shadow:inset 5px 5px 4px rgba(255,255,255,.3),
+inset -5px -5px 5px rgba(255,255,255,.3);
 }
 
 section .resultado_busqueda .tarjeta
@@ -144,6 +193,7 @@ section .resultado_busqueda .tarjeta
 {
     display:inline;
     padding:5px;
+    color:rgba(255,255,255,.8);
 }
 
 section .resultado_busqueda .tarjeta
@@ -152,20 +202,40 @@ section .resultado_busqueda .tarjeta
     margin-top: 10px;
     border-radius: 10px;
     padding: 5px;
+    background-color:transparent;
+    color:#eaeaea;
+    border:1px solid white;
+    box-shadow:inset 5px 5px 4px rgba(255,255,255,.3),
+inset -5px -5px 5px rgba(255,255,255,.3);
+outline:none;
 }
 
 
 section .resultado_busqueda .tarjeta
 button
 {
+    position: absolute;
     padding: 10px;
     text-align: center;
     vertical-align: middle;
     border-radius: 15px;
-    position: absolute;
+    border:1px solid white;
+    color:white;
     left: 15px;
     bottom:-40px;
+    background-color:transparent;
+    transition:0.2s ease-in;
+    cursor:pointer;
 }
+
+section .resultado_busqueda .tarjeta
+button:hover
+{
+    box-shadow: 0 0 8px rgb(39, 170, 45),
+    0 0 10px rgb(39, 170, 45),
+    0 0 12px rgb(39, 170, 45);
+}
+
 
 section .resultado_busqueda .tarjeta
 a 
@@ -173,12 +243,20 @@ a
 position:absolute;
 padding:10px;
 right:15px;
-border:1px solid black;
+border:1px solid white;
 border-radius:20px;
 bottom:-45px;
 right:50px;
+color:white;
+transition:0.2s ease-in;
 text-decoration:none;
 outline:none;
 }
 
-
+section .resultado_busqueda .tarjeta
+a:hover 
+{
+    box-shadow: 0 0 8px rgb(194, 27, 12),
+    0 0 10px rgb(194, 27, 12),
+    0 0 12px rgb(194, 27, 12);
+}
