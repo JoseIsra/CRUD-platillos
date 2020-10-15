@@ -2,8 +2,8 @@ const {Sequelize } = require('sequelize');
 
 const platoModelo = require('../models/plato');
 
-const sequelize = new Sequelize("platillos","root","54321",{
-        host:'localhost',
+const sequelize = new Sequelize("DB_NOMBRE_AQUI","USE_AQUI","DB_PASSWORD",{
+        host:'EL_HOST',
         dialect:'mysql' 
     });
 
